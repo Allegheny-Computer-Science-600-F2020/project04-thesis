@@ -7,7 +7,8 @@ Classroom](https://classroom.github.com/). To learn more about the course in
 which these assignments were completed, please visit the [Computer Science Thesis Fall 2020 Allegheny College GitHub
 Organization](https://github.com/Allegheny-Computer-Science-600-F2020).
 
-The LaTeX file in this repository is automatically compiled with GitHub Actions (https://docs.github.com/en/free-pro-team@latest/actions/quickstart), thus ensuring that it compiles correctly and,
+The LaTeX file in this repository is automatically compiled with [GitHub
+Action](https://docs.github.com/en/free-pro-team@latest/actions/quickstart), thus ensuring that it compiles correctly and,
 moreover, that a PDF of the project thesis is available in your GitHub
 repository whenever a commit is tagged for a release. Additionally, you can use
 a LaTeX compilation command like `pdflatex` or `latexmk` to compile the provided
@@ -36,14 +37,23 @@ that GitHub provides.
 
 ## Tagging
 
-Since this repository primarily contains LaTeX source code, the GitHub Actions (https://docs.github.com/en/free-pro-team@latest/actions/quickstart) configuration for it will compile the source code and automatically release a PDF of the main file whenever the last commit is associated with a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). As such, this will cause a PDF file to become available in the listing of the "Releases" listing for this repository. All release numbers for your writing in this repository should adhere to the [Semantic Versioning](http://semver.org/) standard that all GitHub projects are asked to adopt.
+Since this repository primarily contains LaTeX source code, the GitHub Actions
+configuration for it will compile the source code and automatically release a
+PDF of the main file whenever the last commit is associated with a [Git
+Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). As such, this will
+cause a PDF file to become available in the listing of the "Releases" listing
+for this repository. All release numbers for your writing in this repository
+should adhere to the [Semantic Versioning](http://semver.org/) standard that
+all GitHub projects are asked to adopt.
 
-Please note that the faculty members who read the PDF that is generated from the LaTeX source code will only do so by downloading the "tagged" release of the
-file `senior_thesis.pdf` that has a version number greater than 1.0.0. That is, if your commit is tagged with
+Please note that the faculty members who read the PDF that is generated from the
+LaTeX source code will only do so by downloading the "tagged" release of the
+file `senior_thesis.pdf` that has a version number greater than
+1.0.0. That is, if your commit is tagged with
 `senior_thesis-jjumadinova-1.0.0`, then the file
 `senior_thesis.pdf` should be available for download in the
 "Releases" tab in your GitHub repository for this project under the name
-`senior_thesis-jjumadinova-1.0.0`.
+`senior_thesis-amohan-1.0.0`.
 
 Once you have finished making a single small change to the
 `senior_thesis.tex`, you should commit your file using a `git
@@ -51,9 +61,9 @@ commit` command. Now, to create your first tag for this repository you could
 type `git tag senior_thesis-jjumadinova-0.1.0`. Of course, you should
 substitute your user name for `jjumadinova` when you create the tag. At this point,
 you are ready to push your changes with the appropriate tag by typing the
-command `git push -u origin master --tags`. After waiting for a period of time,
+command `git push -u origin master --tags`. If the above command throws an error related to `failed to push some refs to ...`, then make sure to do the git branch using the command `git branch -M master`. After git branch, you may try the push command above again. Note: This git branch step is not required if git push goes through successfully directly. After waiting for a period of time,
 you should see that your GitHub repository features a new release of the
-document that you must create for this project. Alternatively, you may navigate to the Actions section of your GitHub repository. In this page, a list of GitHub Actions workflow(s) that were triggered during your tagged push will be displayed. A check mark indicates that all steps in the workflow completed successfully and a PDF release has been completed. 
+document that you must create for this project. Alternatively, you may navigate to the Actions section of your GitHub repository. In this page, a list of GitHub Action workflow(s) that were triggered during your tagged push will be displayed. A check mark indicates that all steps in the workflow completed successfully and a PDF release has been generated. 
 
 When you make subsequent changes to your files and perform commits and you are
 ready to release a new version of `senior_thesis.pdf`, then you should
