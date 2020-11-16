@@ -7,8 +7,7 @@ Classroom](https://classroom.github.com/). To learn more about the course in
 which these assignments were completed, please visit the [Computer Science Thesis Fall 2020 Allegheny College GitHub
 Organization](https://github.com/Allegheny-Computer-Science-600-F2020).
 
-The LaTeX file in this repository is automatically compiled with [Travis
-CI](https://travis-ci.org/), thus ensuring that it compiles correctly and,
+The LaTeX file in this repository is automatically compiled with GitHub Actions (https://docs.github.com/en/free-pro-team@latest/actions/quickstart), thus ensuring that it compiles correctly and,
 moreover, that a PDF of the project thesis is available in your GitHub
 repository whenever a commit is tagged for a release. Additionally, you can use
 a LaTeX compilation command like `pdflatex` or `latexmk` to compile the provided
@@ -35,58 +34,12 @@ If you have not done so already, please read all of the relevant [GitHub
 Guides](https://guides.github.com/) that explain how to use many of the features
 that GitHub provides.
 
-## Travis
-
-This assignment uses [Travis CI](https://travis-ci.com/) to automatically run
-the checking programs every time you commit to your GitHub repository. The
-checking will start as soon as you have accepted the assignment, thus creating
-your own private repository, and the course instructor enables Travis for it. If
-you are using Travis for the first time, you will need to authorize Travis CI to
-access the private repositories that you created on GitHub. You will partially
-complete this authorization by following intuitive steps in your web browser.
-You will also need to type the command `travis login --pro` in your terminal
-window when you are in the root of your GitHub repository.
-
-## Security
-
-In order for Travis to automatically upload a PDF, called
-`senior_thesis.pdf`, to GitHub when you tag the commit, you need to
-created your encrypted access token. To complete this task you must type the
-command `travis setup releases --com --force` in your GitHub repository for this
-assignment. Then, when prompted, please type your username and password for
-GitHub. When asked to give the filename, you can type
-`_build/senior_thesis.pdf`. When asked if you want to deploy from a
-specific repository, you can respond with the answer of "no". Finally, when
-this tool asks if you want to use encryption, please answer with a "yes".
-
-Now, you should have a `.travis.yml` file with a secure access token for your
-GitHub repository for this assignment. Use a text editor to edit this file and
-place the following lines of code at the bottom of it. Please note that you must
-preserve the spacing in the following code segment when you paste it into your
-own `.travis.yml` file. Now, you should be ready to perform a commit with tags
-and see your PDF uploaded to GitHub!
-
-```
-  skip_cleanup: true
-  on:
-    tags: true
-```
-
 ## Tagging
 
-Since this repository primarily contains LaTeX source code, the Travis CI
-configuration for it will compile the source code and automatically release a
-PDF of the main file whenever the last commit is associated with a [Git
-Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). As such, this will
-cause a PDF file to become available in the listing of the "Releases" listing
-for this repository. All release numbers for your writing in this repository
-should adhere to the [Semantic Versioning](http://semver.org/) standard that
-all GitHub projects are asked to adopt.
+Since this repository primarily contains LaTeX source code, the GitHub Actions (https://docs.github.com/en/free-pro-team@latest/actions/quickstart) configuration for it will compile the source code and automatically release a PDF of the main file whenever the last commit is associated with a [Git Tag](https://git-scm.com/book/en/v2/Git-Basics-Tagging). As such, this will cause a PDF file to become available in the listing of the "Releases" listing for this repository. All release numbers for your writing in this repository should adhere to the [Semantic Versioning](http://semver.org/) standard that all GitHub projects are asked to adopt.
 
-Please note that the faculty members who read the PDF that is generated from the
-LaTeX source code will only do so by downloading the "tagged" release of the
-file `senior_thesis.pdf` that has a version number greater than
-1.0.0. That is, if your commit is tagged with
+Please note that the faculty members who read the PDF that is generated from the LaTeX source code will only do so by downloading the "tagged" release of the
+file `senior_thesis.pdf` that has a version number greater than 1.0.0. That is, if your commit is tagged with
 `senior_thesis-jjumadinova-1.0.0`, then the file
 `senior_thesis.pdf` should be available for download in the
 "Releases" tab in your GitHub repository for this project under the name
@@ -100,7 +53,7 @@ substitute your user name for `jjumadinova` when you create the tag. At this poi
 you are ready to push your changes with the appropriate tag by typing the
 command `git push -u origin master --tags`. After waiting for a period of time,
 you should see that your GitHub repository features a new release of the
-document that you must create for this project.
+document that you must create for this project. Alternatively, you may navigate to the Actions section of your GitHub repository. In this page, a list of GitHub Actions workflow(s) that were triggered during your tagged push will be displayed. A check mark indicates that all steps in the workflow completed successfully and a PDF release has been completed. 
 
 When you make subsequent changes to your files and perform commits and you are
 ready to release a new version of `senior_thesis.pdf`, then you should
@@ -109,7 +62,7 @@ adheres to the [Semantic Versioning](http://semver.org/) standard. Each time
 that you correctly execute this sequence of commands you will release a new
 version of your document to GitHub that is easily accessible as a PDF to you and
 to your first and second readers. If you are unable to create a tagged release
-using the automated system that Travis provides you can manually create one by
+using the automated system that GitHub Actions provides you can manually create one by
 using GitHub's web interface; to adopt the manual approach please click the
 "Draft a new release" button in the Releases tab of your GitHub repository.
 
